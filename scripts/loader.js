@@ -12,11 +12,20 @@ for (var i = 0; i < games.length; i++) {
     description.append(span, " ", descriptions[i]);
     fieldset.append(description);
 
+    var tryP = document.createElement("p");
+    tryP.innerText = "Try ";
+    var a = document.createElement("a");
+    a.href = "./games/" + games[i] + "/";
+    a.innerText = "here";
+    tryP.append(a);
+    fieldset.append(tryP);
+
     var download = document.createElement("p");
     download.innerText = "Download ";
     var a = document.createElement("a");
     a.href = "#";
-    a.download = "./games/" + games[i] + ".zip";
+    a.download = "./installers/" + games[i] + " installer.exe";
+    console.log("./games/" + games[i] + " installer.exe");
     a.innerText = "*here";
     a.title = "For Windows only";
     download.append(a);
